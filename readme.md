@@ -14,4 +14,6 @@
 2. model2 : mvc,  Model + View(jsp) + Contorller(servlet)
 	-	emaillist02
 	-	guestbook02
-	-	mysite02
+
+3. mysite
+	-	mysite02			
