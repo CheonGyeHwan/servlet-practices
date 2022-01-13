@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.List, java.util.ArrayList"%>
-<%@ page import="com.poscoict.guestbook.dao.GuestbookDao"%>
+<%@ page import="java.util.List"%>
 <%@ page import="com.poscoict.guestbook.vo.GuestbookVo"%>
 <html>
 <head>
@@ -9,13 +8,10 @@
 </head>
 <body>
 	<%
-		List<GuestbookVo> list = new ArrayList<>();
-		GuestbookDao dao = new GuestbookDao();
-		
-		list = dao.findAll();
+		List<GuestbookVo> list = (List<GuestbookVo>)request.getAttribute("list");
 		int num = list.size();
 	%>
-	<form action="<%= request.getContextPath() %>/add.jsp" method="post">
+	<form action="<%= request.getContextPath() %>/gb?a=add" method="post">
 	<table border=1 width=500>
 		<tr>
 			<td>이름</td><td><input type="text" name="name"></td>
@@ -35,17 +31,16 @@
 	%>
 	<table width=510 border=1>
 		<tr>
-			<td>[<%= num %>]</td>
+			<td>[<%= num-- %>]</td>
 			<td><%= vo.getName() %></td>
 			<td><%= vo.getRegDate() %></td>
-			<td><a href="/guestbook01/deleteform.jsp?no=<%= vo.getNo() %>">삭제</a></td>
+			<td><a href="<%= request.getContextPath() %>/gb?a=deleteform&no=<%= vo.getNo() %>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan=4><%= vo.getMessage().replaceAll("\n", "<br/>") %></td>
 		</tr>
 	</table>
 	<%
-			num--;
 		}
 	%>
 </body>
