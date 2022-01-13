@@ -15,7 +15,7 @@
 		list = dao.findAll();
 		int num = list.size();
 	%>
-	<form action="/guestbook01/add.jsp" method="post">
+	<form action="<%= request.getContextPath() %>/add.jsp" method="post">
 	<table border=1 width=500>
 		<tr>
 			<td>이름</td><td><input type="text" name="name"></td>
