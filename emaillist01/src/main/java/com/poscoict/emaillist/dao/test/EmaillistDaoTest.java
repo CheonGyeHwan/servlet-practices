@@ -8,7 +8,7 @@ public class EmaillistDaoTest {
 
 	public static void main(String[] args) {
 		testInsert();
-//		testFindAll();
+		testFindAll();
 	}
 
 	private static void testInsert() {
