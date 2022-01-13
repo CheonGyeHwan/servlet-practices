@@ -75,4 +75,9 @@ public class EmaillistDao {
 		return result;
 	}
 
+	public boolean insert(EmaillistVo vo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
