@@ -9,11 +9,11 @@
 </head>
 <body>
 	<%
-		List<GuestbookVo> list = new ArrayList<>();
-		GuestbookDao dao = new GuestbookDao();
-		
-		list = dao.findAll();
-		int num = list.size();
+	List<GuestbookVo> list = new ArrayList<>();
+			GuestbookDao dao = new GuestbookDao();
+			
+			list = dao.findAll();
+			int num = list.size();
 	%>
 	<form action="<%= request.getContextPath() %>/add.jsp" method="post">
 	<table border=1 width=500>

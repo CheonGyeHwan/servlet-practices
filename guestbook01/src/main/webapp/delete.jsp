@@ -2,7 +2,7 @@
 <%@ page import="com.poscoict.guestbook.dao.GuestbookDao"%>
 
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 	int no = Integer.parseInt(request.getParameter("no"));
 	String password = request.getParameter("password");
 	
